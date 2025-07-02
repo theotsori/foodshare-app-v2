@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar Hide for horizontal scrolling elements */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* For glassmorphism effect, if desired, apply to a specific element */
+.glass-effect {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent white */
+  -webkit-backdrop-filter: blur(10px) saturate(180%); /* Blur and saturate background for Safari */
+  backdrop-filter: blur(10px) saturate(180%); /* Blur and saturate background */
+  border: 1px solid rgba(209, 213, 219, 0.3); /* Subtle border */
+}
+
+/* Animations are typically defined in tailwind.config.js
+  for optimal integration and purging.
+  If you prefer to keep them here, ensure they are correct.
+*/
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-slide-in-up {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+.animate-bounce-once {
+  animation: bounceOnce 1s ease-in-out;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3s infinite ease-in-out;
+}
+
+.animate-ping-once {
+  animation: pingOnce 1.5s cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* New animations for MapView pins */
+.animate-ping-slow-delay1 {
+  animation: pingOnce 1.5s cubic-bezier(0, 0, 0.2, 1) infinite 0s;
+}
+.animate-ping-slow-delay2 {
+  animation: pingOnce 1.5s cubic-bezier(0, 0, 0.2, 1) infinite 0.5s; /* 0.5s delay */
+}
+.animate-ping-slow-delay3 {
+  animation: pingOnce 1.5s cubic-bezier(0, 0, 0.2, 1) infinite 1s; /* 1s delay */
+}
+
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounceOnce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Slightly more bounce */
+  }
+}
+
+@keyframes pingOnce {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.8;
+  }
+  80%, 100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
