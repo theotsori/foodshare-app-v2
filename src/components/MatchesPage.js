@@ -308,12 +308,12 @@ const MatchesPage = () => {
         user_id: user.user_id,
       });
       console.log('Match status updated:', response.data);
-    
+
       // Refresh matches
       const matchesRes = await axios.get(`http://localhost:4000/api/users/${user.user_id}/matches`);
       const matches = matchesRes.data;
       setUserMatches(matches);
-    
+
       // Update stats
       const completed = matches.filter(m => m.match_status === 'completed').length;
       const active = matches.filter(m => m.match_status === 'scheduled').length;
@@ -323,7 +323,7 @@ const MatchesPage = () => {
         activeMatches: active,
         totalXP: completed * 100 + active * 50 + matches.length * 25
       });
-    
+
       alert(`Match status updated to ${status} successfully!`);
     } catch (err) {
       const errorMessage = err.response?.data?.error || err.message;
@@ -365,9 +365,10 @@ const MatchesPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Your Food Matches
-          </h1>
+          <div className="flex items-center space-x-3 mb-2">
+            <HeartHandshake className="h-8 w-8 text-blue-600" />
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Food Matches</h1>
+          </div>
           <p className="text-gray-600">
             Track your food sharing activities and earn XP by completing matches
           </p>
