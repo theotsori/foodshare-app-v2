@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+## 🥗 FoodShare App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**FoodShare** is a community-driven platform that connects food donors with people in need. The app allows users to post surplus food items, view available donations, and help reduce food waste by sharing instead of discarding.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### 🚀 Features
 
-### `npm start`
+* 🌍 **Geo-location** support for pickup addresses
+* 📸 **Image upload** (via file or URL) with preview support
+* 📅 **Expiry tracking** of food items
+* 📦 **Categorized donations** for easy browsing
+* 👤 **User authentication & profile management**
+* 🧭 **Step-by-step carousel-style donation form**
+* 🔔 **Success notifications** and error handling
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🛠️ Tech Stack
 
-### `npm test`
+| Frontend             | Backend                | Other Tools    |
+| -------------------- | ---------------------- | -------------- |
+| React + Tailwind CSS | Node.js + Express.js   | Axios          |
+| React Context API    | PostgreSQL             | Lucide Icons   |
+| React Router         | Multer (image uploads) | Vite / Webpack |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+### ⚙️ Local Development Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repo**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/theotsori/foodshare-app.git
+cd foodshare-app
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies**
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Set environment variables**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a `.env` file and add:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+API_BASE_URL=http://localhost:4000
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> *Backend should be running on port 4000.*
 
-## Learn More
+4. **Run the development server**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 📁 Folder Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+src/
+├── components/       # Reusable components (e.g., DonateModal)
+├── hooks/            # Custom hooks (e.g., useFoodSharing)
+├── pages/            # Route-based pages (Home, Matches, etc.)
+├── context/          # Global state (user, categories)
+└── App.jsx           # Main app component
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 📦 API Overview
 
-### Making a Progressive Web App
+| Method | Endpoint             | Description           |
+| ------ | -------------------- | --------------------- |
+| POST   | `/api/donations`     | Create a new donation |
+| GET    | `/api/donations`     | Get all donations     |
+| GET    | `/api/donations/:id` | Get single donation   |
+| POST   | `/api/auth/login`    | User login            |
+| POST   | `/api/auth/register` | User registration     |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+> *See backend repo or Swagger docs for more.*
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### ✨ Contribution Guide
 
-### Deployment
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Create a new Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### 📄 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT License © 2025 \foodshare
+
+---
+
+### 💡 Inspiration
+
+FoodShare was inspired by the desire to **fight hunger and reduce food waste** in local communities. A simple donation can make a big difference.
